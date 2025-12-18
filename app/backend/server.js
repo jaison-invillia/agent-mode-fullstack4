@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const products = require('./mocks/products.json');
+const productsRouter = require('./routes/products');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -8,13 +8,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-app.get('/health-check', (req, res) => {
-  res.json({ status: 'OK' });
-});
-
-app.get('/products', (req, res) => {
-  res.json(products);
-});
+app.use('/', productsRouter);
 
 app.listen(PORT, () => {
   console.log(`Products API listening on port ${PORT}`);
