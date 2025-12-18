@@ -51,3 +51,32 @@ Se o exercício não estiver pronto em 20 segundos, verifique a aba "Actions" do
 ---
 
 &copy; 2025 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
+
+## Backend API (Node.js)
+
+- **Endpoint:** `GET /products` retorna lista mock com `id`, `title`, `price`.
+- **Diretório:** [app/backend](app/backend) (não mudar de pasta; usar prefixo nos comandos).
+- **CORS:** habilitado para todos os hosts.
+
+### Executar o servidor
+
+```bash
+# instalar dependências (já instalado, se precisar repetir)
+npm install express cors --prefix /workspaces/agent-mode-fullstack4/app/backend
+
+# iniciar servidor
+npm run start --prefix /workspaces/agent-mode-fullstack4/app/backend
+# ou
+node /workspaces/agent-mode-fullstack4/app/backend/server.js
+```
+
+### Testar o endpoint
+
+- Local: http://localhost:3000/products
+- Codespaces/Dev Container (porta 3000): https://scaling-engine-97gx5w7v6jv7f799v-3000.app.github.dev/products
+
+Exemplo curl:
+
+```bash
+curl -s https://scaling-engine-97gx5w7v6jv7f799v-3000.app.github.dev/products
+```
